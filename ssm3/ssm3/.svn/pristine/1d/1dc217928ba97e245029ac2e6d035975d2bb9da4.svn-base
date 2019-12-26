@@ -1,0 +1,56 @@
+package com.feicui.ssm3.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.feicui.ssm3.entity.Customer;
+import com.feicui.ssm3.entity.CustomerDept;
+import com.feicui.ssm3.entity.Dept;
+import com.feicui.ssm3.entity.QueryVo;
+import com.feicui.ssm3.mapper.CustomerDao;
+
+@Service
+public class CustomerServiceImpl implements CustomerService{
+
+	@Autowired
+	private CustomerDao customerDao;
+
+	public List<CustomerDept> findCustomer() {
+		// TODO Auto-generated method stub
+		return customerDao.findCustomer();
+	}
+
+	public List<Dept> findept(Dept dept) {
+		// TODO Auto-generated method stub
+		return 	customerDao.findept(dept);
+	}
+
+	public void addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		customerDao.addCustomer(customer);
+	}
+
+	public void deletecustomer(Integer id) {
+		// TODO Auto-generated method stub
+		customerDao.deletecustomer(id);
+	}
+
+	public List<Customer> findone(Integer id) {
+		// TODO Auto-generated method stub
+		return customerDao.findone(id);
+	}
+
+	public void updateCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		customerDao.updateCustomer(customer);
+	}
+
+	public void deleteAllUser(QueryVo ids) {
+		// TODO Auto-generated method stub
+		customerDao.deleteAllUser(ids);
+	}
+	
+	
+}
